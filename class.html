@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="screen"></div>
+    
+</body>
+</html>
+<script>
+    let theArr = ["Thier aray","his array","Her Array"]
+    
+    // Asychronize
+    // function addToArray() {
+    //     setTimeout(() => {
+    //         theArr.push("My Array")
+    //         console.log(theArr);
+    //     }, 1000);
+    // }
+    // async function logIt() {
+    //     let info = await addToArray();
+    // }
+    // logIt()
+    // console.log(theArr);
+    
+    let screen = document.getElementById("screen")
+        
+            let  data = fetch('https://fakestoreapi.com/products')
+            .then(res =>res.json())
+            .then(json =>{console.log(json)
+            
+            for (let index = 0; index < json.length; index++) {
+                    const element = json[index];
+
+                    screen.innerHTML += `<div class="enn">
+                    <img class="img" src="${element.image}" alt="">
+                    <h1 class="cat"> CATEGORY${element.category}</h1><br>
+                    <h1 class="title"> TILTLE:${element.title}</h1><br>
+                    <h1 class="price"> PRICE${element.price}</h1><br>
+                    <h1 class="price"> Rating${element.rating}</h1><br>
+                    </div>`
+                }
+            })
+            
+            
+            
+</script>
+######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
